@@ -1,3 +1,6 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import styles from './TodoItem.module.css';
 
@@ -21,9 +24,9 @@ const TodoItem = (props) => {
     textDecoration: 'line-through',
     paddingLeft: '2rem',
   };
-  const { id, completed, title } = props.todo;
-  let viewMode = {};
-  let editMode = {};
+  const [id, completed, title] = props.todo;
+  const viewMode = {};
+  const editMode = {};
 
   if (editing) {
     viewMode.display = 'none';

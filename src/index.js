@@ -10,9 +10,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ToDoContainer />}></Route>
+        <Route path="/" element={<ToDoContainer />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

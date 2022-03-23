@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './Header';
 import InputTodo from './inputTodo';
 import TodosList from './TodosList';
-import { v4 as uuidv4 } from 'uuid';
 
-const TodoContainer = (props) => {
+const TodoContainer = () => {
   function getInitialTodos() {
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
@@ -51,7 +51,7 @@ const TodoContainer = (props) => {
     setTodos([
       ...todos,
       {
-        title: title,
+        title,
         id: uuidv4(),
         completed: false,
       },
@@ -61,6 +61,7 @@ const TodoContainer = (props) => {
     setTodos([
       ...todos.map((todo) => {
         if (todo.id === id) {
+          // eslint-disable-next-line no-param-reassign
           todo.title = title;
         }
         return todo;

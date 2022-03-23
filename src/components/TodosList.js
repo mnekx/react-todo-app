@@ -1,17 +1,19 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class TodosList extends React.Component {
   render() {
+    const [todos, handleChangeProps, deleteTodoProps, handleTodoUpdateProps] = this.props;
     return (
       <ul>
-        {this.props.todos.map((item) => (
+        {todos.map((item) => (
           <TodoItem
             key={item.id}
             todo={item}
-            handleChangeProps={this.props.handleChangeProps}
-            deleteTodoProps={this.props.deleteTodoProps}
-            handleTodoUpdateProps={this.props.handleTodoUpdateProps}
+            handleChangeProps={handleChangeProps}
+            deleteTodoProps={deleteTodoProps}
+            handleTodoUpdateProps={handleTodoUpdateProps}
           />
         ))}
       </ul>
